@@ -1,7 +1,60 @@
-/*
- * Главный файл стилей.
- * Все паршалы подключаются сюда.
- */
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: rgba(255, 69, 0, 0.8);
+}
 
-// Стили для файла с примером HTML-фрагмента
-@import './example';
+body {
+  font-family: 'PT Sans', sans-serif;
+  background-color: rgba(142, 197, 252, 0.5);
+  background-image: linear-gradient(
+    62deg,
+    rgba(141, 196, 252, 0.5) 0%,
+    rgba(224, 195, 252, 0.5) 100%
+  );
+}
+.news-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 15%;
+  margin-top: 30px;
+}
+.news-card {
+  width: 350px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  padding: 12px;
+  background-color: rgba(142, 197, 252, 0.3);
+  .news-author {
+    text-align: right;
+    margin-right: 5px;
+    margin-bottom: 10px;
+  }
+  img {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  .news-title {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .news-descr {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    text-align: left;
+  }
+}
+
+.news-card:hover {
+  width: 380px;
+  background-color: rgba(142, 197, 252, 0.8);
+}
