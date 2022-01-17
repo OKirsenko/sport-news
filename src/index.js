@@ -6,7 +6,7 @@ const headerListEl = document.querySelector('.header-list');
 
 let pageCount = 1;
 let category = 'general';
-let baseUrl = `https://newsapi.org/v2/top-headlines?country=ua&category=${category}&pageSize=3&page=${pageCount}&apiKey=58507d4f9e44467cac1401fbd4d3c576`;
+let baseUrl = `https://newsapi.org/v2/top-headlines?country=ua&category=${category}&pageSize=6&page=${pageCount}&apiKey=58507d4f9e44467cac1401fbd4d3c576`;
 
 fetchNews(baseUrl)
   .then(articleMarkup)
@@ -53,7 +53,7 @@ function articleMarkup(data) {
 
 function onMoreBtnClick() {
   pageCount += 1;
-  let baseUrl = `https://newsapi.org/v2/top-headlines?country=ua&category=${category}&pageSize=3&page=${pageCount}&apiKey=58507d4f9e44467cac1401fbd4d3c576`;
+  let baseUrl = `https://newsapi.org/v2/top-headlines?country=ua&category=${category}&pageSize=6&page=${pageCount}&apiKey=58507d4f9e44467cac1401fbd4d3c576`;
   //   console.log(baseUrl);
   fetchNews(baseUrl).then(articleMarkup);
 }
@@ -62,7 +62,7 @@ function onHeaderListClick(event) {
   if (event.target.nodeName !== 'LI') return;
   // console.log(category);
   category = event.target.dataset.value;
-  baseUrl = `https://newsapi.org/v2/top-headlines?country=ua&category=${category}&pageSize=3&page=${pageCount}&apiKey=58507d4f9e44467cac1401fbd4d3c576`;
+  baseUrl = `https://newsapi.org/v2/top-headlines?country=ua&category=${category}&pageSize=6&page=${pageCount}&apiKey=58507d4f9e44467cac1401fbd4d3c576`;
   console.log(baseUrl);
   news.innerHTML = '';
   fetchNews(baseUrl).then(articleMarkup);
